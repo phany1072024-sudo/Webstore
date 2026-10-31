@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Store | ហាងលក់សម្លៀកបំពាក់</title>
+    <meta name="description" content="ហាងលក់អាវ ខោ ស្បែកជើង កាបូប និងគ្រឿងលម្អ គុណភាពល្អ តម្លៃសមរម្យ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== HERO + NAVBAR ========== -->
+    <header class="full" id="home">
+        <img src="./images/hero.jpg" alt="Web Store background">
+        <div class="overlay"></div>
+
+        <div class="container">
+            <h1 class="logo">Web Store</h1>
+
+            <nav class="navbar" id="navbar">
+                <ul class="home">
+                    <li><a href="#home">ទំព័រដើម</a></li>
+                    <li><a href="#products">ផលិតផល</a></li>
+                    <li><a href="#about">អំពីយើង</a></li>
+                    <li><a href="#contact">ទំនាក់ទំនង</a></li>
+                    <li><a href="#" id="openOrders">ការបញ្ជាទិញរបស់ខ្ញុំ</a></li>
+                </ul>
+            </nav>
+
+            <div class="right">
+                <div class="search">
+                    <input type="text" id="searchInput" placeholder="ស្វែងរកផលិតផល...">
+                </div>
+                <button class="cart-btn" id="openCart" aria-label="កន្ត្រក">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+                <button class="burger" id="burger" aria-label="ម៉ឺនុយ">☰</button>
+            </div>
+        </div>
+
+        <div class="hero-text">
+            <p class="tag">បណ្តុំថ្មី ២០២៦</p>
+            <h2>សម្លៀកបំពាក់ស្អាត<br>សម្រាប់អ្នកគ្រប់គ្នា</h2>
+            <p class="sub">អាវ • ខោ • ស្បែកជើង • កាបូប • គ្រឿងលម្អ</p>
+            <a href="#products" class="cta">ទិញឥឡូវនេះ</a>
+        </div>
+    </header>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section class="products" id="products">
+        <h2 class="title">ផលិតផលរបស់យើង</h2>
+
+        <input type="text" id="mSearch" class="m-search" placeholder="ស្វែងរកផលិតផល...">
+
+        <div class="filter" id="filter"></div>
+
+        <div class="toolbar">
+            <span id="resultCount"></span>
+            <select id="sortSelect">
+                <option value="default">តម្រៀប: ធម្មតា</option>
+                <option value="low">តម្លៃ: ទាបទៅខ្ពស់</option>
+                <option value="high">តម្លៃ: ខ្ពស់ទៅទាប</option>
+                <option value="sale">បញ្ចុះតម្លៃមុន</option>
+            </select>
+        </div>
+
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>រកមិនឃើញផលិតផលទេ 😕</p>
+    </section>
+
+    <!-- ========== WHY US ========== -->
+    <section class="features">
+        <div class="feat"><span>🚚</span><h3>ដឹកជូនរហ័ស</h3><p id="featShip">ដឹកទូទាំងប្រទេស</p></div>
+        <div class="feat"><span>✅</span><h3>គុណភាពធានា</h3><p>ផលិតផលពិតប្រាកដ ១០០%</p></div>
+        <div class="feat"><span>🔄</span><h3>ដូរបានក្នុង ៧ ថ្ងៃ</h3><p>បើទំហំមិនត្រូវ ដូរឲ្យ</p></div>
+        <div class="feat"><span>💵</span><h3>បង់ប្រាក់ពេលទទួល</h3><p>COD ឬ ABA / KHQR</p></div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about">
+        <h2 class="title">អំពីយើង</h2>
+        <p>
+            Web Store គឺជាហាងលក់សម្លៀកបំពាក់ទំនើប ដែលផ្តល់ជូនអាវ ខោ ស្បែកជើង កាបូប និងគ្រឿងលម្អ
+            ដែលមានគុណភាពល្អ ស្អាត និងតម្លៃសមរម្យ។ យើងខ្ញុំប្តេជ្ញាផ្តល់សេវាល្អបំផុតដល់អតិថិជនគ្រប់រូប។
+        </p>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+        <h2 class="title">ទំនាក់ទំនង</h2>
+        <div class="contact-wrap">
+            <div class="info">
+                <p>📍 <span id="cAddress"></span></p>
+                <p>📞 <span id="cPhone"></span></p>
+                <p>✈️ Telegram: <a id="cTelegram" target="_blank" rel="noopener"></a></p>
+                <p>🕒 បើកម៉ោង ៨:០០ ព្រឹក – ៩:០០ យប់ រាល់ថ្ងៃ</p>
+            </div>
+            <form class="msg-form" id="msgForm">
+                <input type="text" name="name" placeholder="ឈ្មោះរបស់អ្នក" required>
+                <input type="text" name="phone" placeholder="លេខទូរស័ព្ទ" required>
+                <textarea name="message" rows="4" placeholder="សារ..." required></textarea>
+                <button type="submit">ផ្ញើសារតាម Telegram</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Web Store។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+    </footer>
+
+    <!-- ========== CART DRAWER ========== -->
+    <div class="backdrop" id="backdrop"></div>
+    <aside class="drawer" id="drawer" aria-label="កន្ត្រកទំនិញ">
+        <div class="drawer-head">
+            <h3>កន្ត្រកទំនិញ</h3>
+            <button id="closeCart" aria-label="បិទ">✕</button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="drawer-foot" id="drawerFoot">
+            <form id="orderForm">
+                <input type="text" name="name" placeholder="ឈ្មោះ" required>
+                <input type="tel" name="phone" placeholder="លេខទូរស័ព្ទ" required pattern="[0-9 +]{8,15}" title="លេខទូរស័ព្ទ ៨-១៥ ខ្ទង់">
+                <select name="zone" id="zoneSelect" required></select>
+                <textarea name="address" rows="2" placeholder="អាសយដ្ឋានលម្អិត (ផ្ទះ ផ្លូវ សង្កាត់ ខណ្ឌ)" required></textarea>
+
+                <div class="pay" id="payOptions">
+                    <label><input type="radio" name="pay" value="cod" checked> 💵 បង់ពេលទទួល (COD)</label>
+                    <label><input type="radio" name="pay" value="transfer"> 📲 ផ្ទេរប្រាក់ ABA / KHQR</label>
+                </div>
+
+                <input type="text" name="note" placeholder="កំណត់ចំណាំ (មិនបាច់ក៏បាន)">
+
+                <div class="sum">
+                    <div><span>តម្លៃទំនិញ</span><span id="sSub">$0.00</span></div>
+                    <div><span>ថ្លៃដឹក</span><span id="sShip">$0.00</span></div>
+                    <div class="total"><span>សរុប</span><strong id="cartTotal">$0.00</strong></div>
+                    <small id="freeHint"></small>
+                </div>
+
+                <button type="submit" class="order-btn">បញ្ជាក់ការបញ្ជាទិញ</button>
+            </form>
+            <button class="clear-btn" id="clearCart">សម្អាតកន្ត្រក</button>
+        </div>
+    </aside>
+
+    <!-- ========== PRODUCT MODAL ========== -->
+    <div class="modal" id="pModal" hidden>
+        <div class="modal-box">
+            <button class="modal-x" data-close>✕</button>
+            <div class="m-pic" id="mPic"></div>
+            <div class="m-info">
+                <p class="cat" id="mCat"></p>
+                <h3 id="mName"></h3>
+                <p class="price" id="mPrice"></p>
+                <p class="desc" id="mDesc"></p>
+
+                <div id="mSizeWrap">
+                    <p class="lbl">ជ្រើសរើសទំហំ</p>
+                    <div class="sizes" id="mSizes"></div>
+                </div>
+
+                <p class="lbl">ចំនួន</p>
+                <div class="qty big">
+                    <button id="mMinus">−</button>
+                    <span id="mQty">1</span>
+                    <button id="mPlus">+</button>
+                </div>
+
+                <button class="add" id="mAdd">បន្ថែមទៅកន្ត្រក</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ORDER SUCCESS MODAL ========== -->
+    <div class="modal" id="oModal" hidden>
+        <div class="modal-box single">
+            <button class="modal-x" data-close>✕</button>
+            <div class="success">
+                <div class="check">✓</div>
+                <h3>បានទទួលការបញ្ជាទិញ!</h3>
+                <p>លេខបញ្ជាទិញ៖ <b id="oId"></b></p>
+
+                <div id="payBox" class="payBox" hidden>
+                    <p>សូមផ្ទេរប្រាក់ <b id="oAmount"></b> មកកាន់៖</p>
+                    <img id="qrImg" alt="QR" onerror="this.style.display='none'">
+                    <p><b id="bankName"></b></p>
+                    <p>គណនី៖ <b id="bankAcc"></b> (<span id="bankHolder"></span>)</p>
+                    <p class="warn">បន្ទាប់ពីបង់ សូមផ្ញើរូបថតវិក្កយបត្រតាម Telegram</p>
+                </div>
+
+                <p class="step">ជំហានចុងក្រោយ៖ ផ្ញើការបញ្ជាទិញទៅហាងតាម Telegram</p>
+                <textarea id="oText" rows="8" readonly></textarea>
+                <div class="btns">
+                    <button class="add" id="oCopy">ចម្លងសារ</button>
+                    <a class="add tg" id="oTg" target="_blank" rel="noopener">បើក Telegram</a>
+                </div>
+                <small>ចម្លងសារ រួចបើក Telegram ហើយ Paste ផ្ញើទៅហាង</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MY ORDERS MODAL ========== -->
+    <div class="modal" id="hModal" hidden>
+        <div class="modal-box single">
+            <button class="modal-x" data-close>✕</button>
+            <h3 style="margin-bottom:12px">ការបញ្ជាទិញរបស់ខ្ញុំ</h3>
+            <div id="hList"></div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
